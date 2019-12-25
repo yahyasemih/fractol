@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:55:41 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 14:14:39 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 14:48:16 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,9 @@ typedef	struct		s_config
 t_complex			add(t_complex a, t_complex b);
 
 t_complex			multiply(t_complex a, t_complex b);
+
+int					ft_strlen(const char *s);
+
+int					ft_strcmp(const char *s1, const char *s2);
 
 #endif
