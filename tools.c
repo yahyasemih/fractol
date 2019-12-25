@@ -6,13 +6,13 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 14:46:27 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 15:59:14 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 16:20:03 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		ft_strlen(const char *s)
+int			ft_strlen(const char *s)
 {
 	int	len;
 
@@ -24,7 +24,7 @@ int		ft_strlen(const char *s)
 	return (len);
 }
 
-int		ft_strcmp(const char *s1, const char *s2)
+int			ft_strcmp(const char *s1, const char *s2)
 {
 	int				i;
 	unsigned char	*str1;
@@ -46,14 +46,34 @@ int		ft_strcmp(const char *s1, const char *s2)
 	return (0);
 }
 
-int			julia(t_complex z0, t_complex c, int iterations_max)
+int			julia(int x, int y, t_config *config)
 {
 	int			iterations;
 	t_complex	z;
 
 	iterations = 1;
-	z = z0;
-	while (iterations < iterations_max && module(z) < 2.0)
+	z.re = x / config->zoom + config->x;
+	z.im = y / config->zoom + config->y;
+	while (iterations < config->iterations && module(z) < 2.0)
+	{
+		z = add(multiply(z, z), config->c);
+		iterations++;
+	}
+	return (iterations);
+}
+
+int			mandelbrot(int x, int y, t_config *config)
+{
+	int			iterations;
+	t_complex	z;
+	t_complex	c;
+
+	iterations = 1;
+	z.re = 0.0;
+	z.im = 0.0;
+	c.re = x / config->zoom + config->x;
+	c.im = y / config->zoom + config->y;
+	while (iterations < config->iterations && module(z) < 2.0)
 	{
 		z = add(multiply(z, z), c);
 		iterations++;
@@ -61,17 +81,25 @@ int			julia(t_complex z0, t_complex c, int iterations_max)
 	return (iterations);
 }
 
-int			mandelbrot(t_complex z0, t_complex c, int iterations_max)
+void		draw(t_config *config)
 {
-	int			iterations;
-	t_complex	z;
+	int		i;
+	int		j;
+	int		iter;
 
-	iterations = 1;
-	z = z0;
-	while (iterations < iterations_max && module(z) < 2.0)
+	i = 0;
+	while (i < WINDOW_WIDTH)
 	{
-		z = add(multiply(z, z), c);
-		iterations++;
+		j = 0;
+		while (j < WINDOW_HEIGHT)
+		{
+			iter = config->fractal(i, j, config);
+			if (iter == config->iterations)
+				mlx_pixel_put(config->mlx_ptr, config->mlx_win, i, j, 0x0);
+			else
+				mlx_pixel_put(config->mlx_ptr, config->mlx_win, i, j, iter * 500);
+			j++;
+		}
+		i++;
 	}
-	return (iterations);
 }
