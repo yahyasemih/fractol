@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:55:41 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 14:48:16 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 15:21:13 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <mlx.h>
+
+# define WINDOW_WIDTH 1200
+# define WINDOW_HEIGHT 900
 
 typedef	struct		s_complex
 {
