@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:55:41 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 19:08:30 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 19:14:04 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ double				module(t_complex z);
 int					ft_strlen(const char *s);
 
 int					ft_strcmp(const char *s1, const char *s2);
+
+void        		init_fractals(char *av[], t_config *config);
 
 int					julia(int x, int y, t_config *config);
 

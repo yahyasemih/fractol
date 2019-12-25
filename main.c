@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:56:24 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 19:08:36 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 19:14:23 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,15 +71,7 @@ static void	init_config(int ac, char *av[], t_config *config)
 	config->x = -2.2;
 	config->y = -1.5;
 	config->setup = 0;
-	if (!ft_strcmp(av[1], "Julia"))
-	{
-		config->fractal = julia;
-		config->setup = 1;
-		config->c.re = -0.8;
-		config->c.im = 0.156;
-	}
-	else if (!ft_strcmp(av[1], "Mandelbrot"))
-		config->fractal = mandelbrot;
+	init_fractals(av, config);
 }
 
 int			main(int argc, char *argv[])
