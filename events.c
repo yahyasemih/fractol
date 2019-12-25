@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 16:00:58 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 19:08:23 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 19:10:41 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ static void		handle_moving(int key, t_config *config)
 		config->y += (10 / config->zoom);
 }
 
+static void		handle_iterations(int key, t_config *config)
+{
+	if (key == 31 && config->iterations > 10)
+		config->iterations -= 5;
+	else if (key == 34 && config->iterations < 150)
+		config->iterations += 5;
+}
+
 int				window_operations(int key, void *param)
 {
 	t_config	*config;
@@ -36,10 +44,8 @@ int				window_operations(int key, void *param)
 	else if (key == 8)
 		while (i < 50)
 			config->color[i++] *= 3;
-	else if (key == 31 && config->iterations > 10)
-		config->iterations -= 5;
-	else if (key == 34 && config->iterations < 150)
-		config->iterations += 5;
+	else if (key == 31 || key == 34)
+		handle_iterations(key, config);
 	else if (key == 53)
 	{
 		mlx_destroy_window(config->mlx_ptr, config->mlx_win);
