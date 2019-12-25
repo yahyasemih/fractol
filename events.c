@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 16:00:58 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 19:10:41 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 19:18:02 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int				window_operations(int key, void *param)
 			config->color[i++] *= 3;
 	else if (key == 31 || key == 34)
 		handle_iterations(key, config);
+	else if (key == 35)
+		print_scene(config);
 	else if (key == 53)
 	{
 		mlx_destroy_window(config->mlx_ptr, config->mlx_win);

@@ -6,15 +6,15 @@
 #    By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/25 14:36:35 by yez-zain          #+#    #+#              #
-#    Updated: 2019/12/25 16:36:23 by yez-zain         ###   ########.fr        #
+#    Updated: 2019/12/25 19:32:53 by yez-zain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 
-SRC = main.c tools.c complex.c events.c fractals.c
+SRC = main.c tools.c complex.c events.c fractals.c print.c
 
-OBJ = main.o tools.o complex.o events.o fractals.o
+OBJ = main.o tools.o complex.o events.o fractals.o print.o
 
 all:$(NAME)
 

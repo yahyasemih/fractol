@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:55:41 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 19:14:04 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 19:19:36 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,7 @@ int					button_operations(int button, int x, int y, void *param);
 int					mouse_operations(int x, int y, void *param);
 
 int					window_operations(int key, void *param);
+
+void    			print_scene(t_config *config);
 
 #endif
