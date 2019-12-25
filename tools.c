@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 14:46:27 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 14:47:53 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 15:59:14 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,34 @@ int		ft_strcmp(const char *s1, const char *s2)
 	if (ft_strlen(s1) < ft_strlen(s2))
 		return (-str2[ft_strlen(s1)]);
 	return (0);
+}
+
+int			julia(t_complex z0, t_complex c, int iterations_max)
+{
+	int			iterations;
+	t_complex	z;
+
+	iterations = 1;
+	z = z0;
+	while (iterations < iterations_max && module(z) < 2.0)
+	{
+		z = add(multiply(z, z), c);
+		iterations++;
+	}
+	return (iterations);
+}
+
+int			mandelbrot(t_complex z0, t_complex c, int iterations_max)
+{
+	int			iterations;
+	t_complex	z;
+
+	iterations = 1;
+	z = z0;
+	while (iterations < iterations_max && module(z) < 2.0)
+	{
+		z = add(multiply(z, z), c);
+		iterations++;
+	}
+	return (iterations);
 }
