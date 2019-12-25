@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 16:00:58 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 19:18:02 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 20:00:36 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int				button_operations(int button, int x, int y, void *param)
 	t_config	*config;
 
 	config = (t_config*)param;
-	if (button == 4)
+	if (button == 4 && config->zoom > 10)
 		(config->zoom) -= 10;
 	else if (button == 5)
 		(config->zoom) += 10;
