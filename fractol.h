@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:55:41 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 16:21:52 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 18:16:20 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <fcntl.h>
 # include <mlx.h>
 
-# define WINDOW_WIDTH 800
+# define WINDOW_WIDTH 900
 # define WINDOW_HEIGHT 600
 
 typedef	struct		s_complex
@@ -28,16 +28,27 @@ typedef	struct		s_complex
 	double			im;
 }					t_complex;
 
+typedef	struct		s_image
+{
+	void			*mlx_img;
+	char			*data;
+	int				bits_per_pixel;
+	int				size_line;
+	int				endian;
+}					t_image;
+
 typedef	struct		s_config
 {
 	void			*mlx_ptr;
 	void			*mlx_win;
+	t_image			image;
 	double			zoom;
 	double			x;
 	double			y;
 	t_complex		c;
 	int				iterations;
 	int				setup;
+	int				color[50];
 	int				(*fractal)(int x, int y, struct s_config *config);
 }					t_config;
 
