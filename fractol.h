@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:55:41 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 16:02:29 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 16:21:52 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <fcntl.h>
 # include <mlx.h>
 
-# define WINDOW_WIDTH 1200
-# define WINDOW_HEIGHT 900
+# define WINDOW_WIDTH 800
+# define WINDOW_HEIGHT 600
 
 typedef	struct		s_complex
 {
@@ -38,7 +38,7 @@ typedef	struct		s_config
 	t_complex		c;
 	int				iterations;
 	int				setup;
-	int				(*fractal)(t_complex z0, t_complex c, int iterations_max);
+	int				(*fractal)(int x, int y, struct s_config *config);
 }					t_config;
 
 t_complex			add(t_complex a, t_complex b);
@@ -51,9 +51,11 @@ int					ft_strlen(const char *s);
 
 int					ft_strcmp(const char *s1, const char *s2);
 
-int					julia(t_complex z0, t_complex c, int iterations_max);
+int					julia(int x, int y, t_config *config);
 
-int					mandelbrot(t_complex z0, t_complex c, int iterations_max);
+int					mandelbrot(int x, int y, t_config *config);
+
+void				draw(t_config *config);
 
 int					button_operations(int button, int x, int y, void *param);
 
