@@ -6,15 +6,15 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 16:36:33 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 19:13:51 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 20:23:07 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void        init_fractals(char *av[], t_config *config)
+void		init_fractals(char *av[], t_config *config)
 {
-    if (!ft_strcmp(av[1], "Julia"))
+	if (!ft_strcmp(av[1], "Julia"))
 	{
 		config->fractal = julia;
 		config->setup = 1;

@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:55:41 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 19:19:36 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 20:24:01 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int					ft_strlen(const char *s);
 
 int					ft_strcmp(const char *s1, const char *s2);
 
-void        		init_fractals(char *av[], t_config *config);
+void				init_fractals(char *av[], t_config *config);
 
 int					julia(int x, int y, t_config *config);
 
@@ -76,6 +76,6 @@ int					mouse_operations(int x, int y, void *param);
 
 int					window_operations(int key, void *param);
 
-void    			print_scene(t_config *config);
+void				print_scene(t_config *config);
 
 #endif
