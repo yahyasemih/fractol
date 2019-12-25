@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:56:24 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 18:54:02 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 19:08:36 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int			main(int argc, char *argv[])
 
 	init_config(argc, argv, &config);
 	mlx_mouse_hook(config.mlx_win, button_operations, (void*)(&config));
-	mlx_hook(config.mlx_win, 6, 0, mouse_mouve_operations, (void*)(&config));
+	mlx_hook(config.mlx_win, 6, 0, mouse_operations, (void*)(&config));
 	mlx_hook(config.mlx_win, 2, 0, window_operations, (void*)(&config));
 	draw(&config);
 	mlx_loop(config.mlx_ptr);

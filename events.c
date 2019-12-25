@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 16:00:58 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 19:06:15 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 19:08:23 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int				window_operations(int key, void *param)
 	return (0);
 }
 
-int				mouse_mouve_operations(int x, int y, void *param)
+int				mouse_operations(int x, int y, void *param)
 {
 	t_config	*config;
 

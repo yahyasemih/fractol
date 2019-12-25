@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:55:41 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 18:16:20 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/25 19:08:30 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void				draw(t_config *config);
 
 int					button_operations(int button, int x, int y, void *param);
 
-int					mouse_mouve_operations(int x, int y, void *param);
+int					mouse_operations(int x, int y, void *param);
 
 int					window_operations(int key, void *param);
 
