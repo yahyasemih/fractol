@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 14:43:07 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 15:39:19 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/26 09:30:01 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ t_complex		multiply(t_complex a, t_complex b)
 
 double			module(t_complex z)
 {
-	return (sqrt(z.re * z.re + z.im * z.im));
+	return (z.re * z.re + z.im * z.im);
 }
