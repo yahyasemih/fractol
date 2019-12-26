@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:55:41 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 20:24:01 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/26 11:58:49 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ void				init_fractals(char *av[], t_config *config);
 int					julia(int x, int y, t_config *config);
 
 int					mandelbrot(int x, int y, t_config *config);
+
+int					tricorn(int x, int y, t_config *config);
+
+int					celtic_mandelbar(int x, int y, t_config *config);
 
 void				draw(t_config *config);
 

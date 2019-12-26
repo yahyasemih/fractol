@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:56:24 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/25 19:14:23 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/26 11:59:08 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ static int	init_image(void *mlx_ptr, t_image *image)
 static void	check_errors(int ac, char *av[], t_config *config)
 {
 	if (ac != 2
-	|| (ft_strcmp(av[1], "Julia") && ft_strcmp(av[1], "Mandelbrot")))
+	|| (ft_strcmp(av[1], "Julia") && ft_strcmp(av[1], "Mandelbrot")
+		&& ft_strcmp(av[1], "Tricorn") && ft_strcmp(av[1], "Mandelbar")))
 		exit_properly(1);
 	if (!(config->mlx_ptr = mlx_init()))
 		exit_properly(2);
