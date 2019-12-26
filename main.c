@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:56:24 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/26 11:59:08 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/26 12:02:14 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	exit_properly(int status)
 	if (status == 1)
 	{
 		write(2, "Usage : ./fractol fractal_name\n", 31);
-		write(2, "fractal_name : Julia, Mandelbrot.\n", 34);
+		write(2, "fractal_name : Julia, Mandelbrot, Tricorn, Mandelbar\n", 53);
 	}
 	else if (status == 2)
 		write(2, "Failed to init mlx.\n", 20);
