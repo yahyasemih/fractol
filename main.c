@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:56:24 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/26 12:48:52 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/26 15:48:14 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,12 @@ static void	init_config(int ac, char *av[], t_config *config)
 	i = 0;
 	while (i < 50)
 	{
-		config->color[i] = 50 * 255 * 255 * i;
+		config->color[i] = 1337 * 42 * (i + 1);
 		i++;
 	}
 	config->zoom = 200.0;
 	config->iterations = 50;
-	config->x = -2.2;
+	config->x = -2.3;
 	config->y = -1.5;
 	config->setup = 0;
 	init_fractals(av, config);
