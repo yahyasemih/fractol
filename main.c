@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:56:24 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/26 15:48:14 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/26 18:13:28 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ void		exit_properly(int status)
 {
 	if (status == 1)
 	{
-		write(2, "Usage : ./fractol fractal_name\n", 31);
-		write(2, "fractal_name : Julia, Mandelbrot, Tricorn, Mandelbar\n", 53);
+		write(1, "Usage : ./fractol fractal_name\n", 31);
+		write(1, "fractal_name :\n", 15);
+		write(1, "\t- Julia\n\t- Mandelbrot\n\t- Tricorn\n\t- Mandelbar\n", 47);
+		write(1, "\t- BurningShipPartial\n\t- Buffalo\n\t- Heart\n", 42);
 	}
 	else if (status == 2)
 		write(2, "Failed to init mlx.\n", 20);
@@ -49,7 +51,9 @@ static void	check_errors(int ac, char *av[], t_config *config)
 {
 	if (ac != 2
 	|| (ft_strcmp(av[1], "Julia") && ft_strcmp(av[1], "Mandelbrot")
-		&& ft_strcmp(av[1], "Tricorn") && ft_strcmp(av[1], "Mandelbar")))
+		&& ft_strcmp(av[1], "Tricorn") && ft_strcmp(av[1], "Mandelbar")
+		&& ft_strcmp(av[1], "Heart") && ft_strcmp(av[1], "BurningShipPartial")
+		&& ft_strcmp(av[1], "Buffalo") && ft_strcmp(av[1], "Mandelbar")))
 		exit_properly(1);
 	if (!(config->mlx_ptr = mlx_init()))
 		exit_properly(2);

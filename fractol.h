@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:55:41 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/26 12:34:43 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/26 18:05:42 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,12 @@ int					mandelbrot(int x, int y, t_config *config);
 int					tricorn(int x, int y, t_config *config);
 
 int					celtic_mandelbar(int x, int y, t_config *config);
+
+int					buffalo(int x, int y, t_config *config);
+
+int					burning_ship_partial(int x, int y, t_config *config);
+
+int					heart(int x, int y, t_config *config);
 
 void				draw(t_config *config);
 

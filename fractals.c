@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 16:36:33 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/26 11:59:25 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/26 18:09:32 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ void			init_fractals(char *av[], t_config *config)
 		config->fractal = tricorn;
 	else if (!ft_strcmp(av[1], "Mandelbar"))
 		config->fractal = celtic_mandelbar;
+	else if (!ft_strcmp(av[1], "Heart"))
+		config->fractal = heart;
+	else if (!ft_strcmp(av[1], "BurningShipPartial"))
+		config->fractal = burning_ship_partial;
+	else if (!ft_strcmp(av[1], "Buffalo"))
+		config->fractal = buffalo;
 }
 
 int				julia(int x, int y, t_config *config)
