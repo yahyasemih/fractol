@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 19:18:27 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/26 15:11:31 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/26 15:20:26 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@ void		print_scene(t_config *config)
 	write(fd, &height, 4);
 	write(fd, "\x0\x0\x0\x0\x0\x0\x0\x0", 8);
 	write(fd, config->image.data, size);
-	write(1, config->image.data, size);
 	close(fd);
 }
