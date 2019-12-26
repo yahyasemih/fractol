@@ -6,12 +6,32 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:56:24 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/26 12:34:22 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/26 12:48:52 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include <stdio.h>
+
+void		exit_properly(int status)
+{
+	if (status == 1)
+	{
+		write(2, "Usage : ./fractol fractal_name\n", 31);
+		write(2, "fractal_name : Julia, Mandelbrot, Tricorn, Mandelbar\n", 53);
+	}
+	else if (status == 2)
+		write(2, "Failed to init mlx.\n", 20);
+	else if (status == 3)
+		write(2, "Failed to create window.\n", 25);
+	else if (status == 4)
+		write(2, "Failed to create new image.\n", 28);
+	else if (status == 5)
+		write(2, "Error while creating thread.\n", 29);
+	else if (status == 6)
+		write(2, "Error while joining threads.\n", 29);
+	exit(status);
+}
 
 static int	init_image(void *mlx_ptr, t_image *image)
 {
