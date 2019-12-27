@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/26 12:20:13 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/26 15:16:31 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/27 13:03:10 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ static void		set_pixel(int i, int j, int iter, t_config *config)
 	image = &(config->image);
 	if (iter == config->iterations)
 	{
-		ft_memset(image->data + (j * image->size_line + i * 4), 0, 4);
+		ft_memcpy(image->data + (j * image->size_line + i * 4),
+			config->color, 4);
 	}
 	else
 	{

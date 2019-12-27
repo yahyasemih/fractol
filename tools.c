@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 14:46:27 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/26 12:48:45 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/27 14:11:01 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,20 +77,24 @@ void		draw(t_config *config)
 	pthread_t	thread[4];
 	int			i;
 
-	if (pthread_create(thread, NULL, left_up_thread, config) == -1)
+	if (pthread_create(thread, NULL, left_up_thread, config) == -1
+	|| pthread_create(thread + 1, NULL, right_up_thread, config) == -1
+	|| pthread_create(thread + 2, NULL, left_down_thread, config) == -1
+	|| pthread_create(thread + 3, NULL, right_down_thread, config) == -1)
+	{
+		mlx_destroy_window(config->mlx_ptr, config->mlx_win);
+		mlx_destroy_image(config->mlx_ptr, config->image.mlx_img);
 		exit_properly(5);
-	if (pthread_create(thread + 1, NULL, right_up_thread, config) == -1)
-		exit_properly(5);
-	if (pthread_create(thread + 2, NULL, left_down_thread, config) == -1)
-		exit_properly(5);
-	if (pthread_create(thread + 3, NULL, right_down_thread, config) == -1)
-		exit_properly(5);
+	}
 	i = 0;
 	while (i < 4)
 	{
-		if (pthread_join(thread[i], NULL))
+		if (pthread_join(thread[i++], NULL))
+		{
+			mlx_destroy_window(config->mlx_ptr, config->mlx_win);
+			mlx_destroy_image(config->mlx_ptr, config->image.mlx_img);
 			exit_properly(6);
-		i++;
+		}
 	}
 	mlx_clear_window(config->mlx_ptr, config->mlx_win);
 	mlx_put_image_to_window(config->mlx_ptr, config->mlx_win,

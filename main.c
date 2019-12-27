@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 11:56:24 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/26 18:13:28 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/27 14:06:08 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void		exit_properly(int status)
 		write(1, "fractal_name :\n", 15);
 		write(1, "\t- Julia\n\t- Mandelbrot\n\t- Tricorn\n\t- Mandelbar\n", 47);
 		write(1, "\t- BurningShipPartial\n\t- Buffalo\n\t- Heart\n", 42);
+		write(1, "\t- MandelbarVertical\n", 21);
+		write(1, "\t- MandelbarHorizontal\n", 23);
 	}
 	else if (status == 2)
 		write(2, "Failed to init mlx.\n", 20);
@@ -53,7 +55,9 @@ static void	check_errors(int ac, char *av[], t_config *config)
 	|| (ft_strcmp(av[1], "Julia") && ft_strcmp(av[1], "Mandelbrot")
 		&& ft_strcmp(av[1], "Tricorn") && ft_strcmp(av[1], "Mandelbar")
 		&& ft_strcmp(av[1], "Heart") && ft_strcmp(av[1], "BurningShipPartial")
-		&& ft_strcmp(av[1], "Buffalo") && ft_strcmp(av[1], "Mandelbar")))
+		&& ft_strcmp(av[1], "Buffalo") && ft_strcmp(av[1], "Mandelbar")
+		&& ft_strcmp(av[1], "MandelbarVertical")
+		&& ft_strcmp(av[1], "MandelbarHorizontal")))
 		exit_properly(1);
 	if (!(config->mlx_ptr = mlx_init()))
 		exit_properly(2);
@@ -61,7 +65,10 @@ static void	check_errors(int ac, char *av[], t_config *config)
 	WINDOW_WIDTH, WINDOW_HEIGHT, av[1])))
 		exit_properly(3);
 	if (!(init_image(config->mlx_ptr, &(config->image))))
+	{
+		mlx_destroy_window(config->mlx_ptr, config->mlx_win);
 		exit_properly(4);
+	}
 }
 
 static void	init_config(int ac, char *av[], t_config *config)
