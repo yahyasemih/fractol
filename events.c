@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 16:00:58 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/27 10:03:32 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/27 10:09:15 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 static void		handle_moving(int key, t_config *config)
 {
 	if (key == 123)
-		config->x += (15 / config->zoom);
+		config->x += (12 / config->zoom);
 	else if (key == 124)
-		config->x -= (15 / config->zoom);
+		config->x -= (12 / config->zoom);
 	else if (key == 125)
-		config->y -= (15 / config->zoom);
+		config->y -= (12 / config->zoom);
 	else if (key == 126)
-		config->y += (15 / config->zoom);
+		config->y += (12 / config->zoom);
 }
 
 static void		handle_iterations(int key, t_config *config)
@@ -84,15 +84,15 @@ int				button_operations(int button, int x, int y, void *param)
 	config = (t_config*)param;
 	if (button == 4 && config->zoom > 10)
 	{
-		config->x = x / config->zoom + config->x - x / (config->zoom / 1.5);
-		config->y = y / config->zoom + config->y - y / (config->zoom / 1.5);
-		(config->zoom) /= 1.5;
+		config->x = x / config->zoom + config->x - x / (config->zoom / 1.2);
+		config->y = y / config->zoom + config->y - y / (config->zoom / 1.2);
+		(config->zoom) /= 1.2;
 	}
 	else if (button == 5)
 	{
-		config->x = x / config->zoom + config->x - x / (config->zoom * 1.5);
-		config->y = y / config->zoom + config->y - y / (config->zoom * 1.5);
-		(config->zoom) *= 1.5;
+		config->x = x / config->zoom + config->x - x / (config->zoom * 1.2);
+		config->y = y / config->zoom + config->y - y / (config->zoom * 1.2);
+		(config->zoom) *= 1.2;
 	}
 	if (button == 4 || button == 5)
 		draw(config);
