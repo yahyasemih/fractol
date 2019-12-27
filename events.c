@@ -6,7 +6,7 @@
 /*   By: yez-zain <yez-zain@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 16:00:58 by yez-zain          #+#    #+#             */
-/*   Updated: 2019/12/27 10:09:15 by yez-zain         ###   ########.fr       */
+/*   Updated: 2019/12/27 10:19:48 by yez-zain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,5 @@ int				button_operations(int button, int x, int y, void *param)
 	}
 	if (button == 4 || button == 5)
 		draw(config);
-	x = y;
 	return (0);
 }
